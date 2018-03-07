@@ -1,5 +1,8 @@
 package com.bridgeit.programs;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import com.bridgeit.utility.Utility;
 
 public class CalenderQueue {
@@ -7,8 +10,8 @@ public class CalenderQueue {
 	public static void main(String[] args) 
 	{
 		Utility utility=new Utility();
-		QueueLogic weekday=new QueueLogic();
-		QueueLogic weekobject=new QueueLogic();
+		
+		
 		
 		String months[]= {"","January","Febuary","March","April","May","June","July","August",
 				   "September","October","November","December"};
@@ -26,53 +29,42 @@ public class CalenderQueue {
 		int result=(Utility.dayOfWeek(month, 1, year));
 		int mont=days[month];
 		int column=mont+1;
-		int rows=8;
-		String array[][]=new String[rows][column];
+		int date=0;
 		
+		Queue weekday  = new LinkedList<>();
+		int numberOfObject;
 		
-		for (int i = 0; i <7; i++)
+		for(int i = 0; i <6;i++)
 		{
-			for (int j = 0; j <7; j++)
-			{
-				array[i][j]="  ";
-			}
-			
+			weekday.add(new LinkedList<>());
 		}
-		array[0][0]="s";array[0][1]="m";array[0][2]="t";array[0][3]="w";array[0][4]="th";array[0][5]="f";array[0][6]="sa";
-		for (int i = 0; i <7; i++)
-		{
-			for (int j = 0; j <7; j++)
-			{
-				System.out.print("\t "+ array[i][j]);
-				
-			}
-			
-		}
+		
+		Queue queue=new LinkedList<>();
+		System.out.println("SUN"+"\t"+"M"+"\t"+"TU"+"\t"+"WED"+"\t"+"TH"+"\t"+"FRI"+"\t"+"SAt");
+		
+
 		System.out.println();
 		try
 		{
-			for(int i=0;i<result;i++)
-			{
+			
 		for (int k = 0; k <result; k++) 
 		{
 			System.out.print("\t ");
 		}
-			for (int j = 1; j <=column; j++)
+			
+			for (int j = 1; j <column; j++)
 			{
-				array[i][j]=Integer.toString(j);
-				System.out.print("\t "+array[i][j]);
 				
+				System.out.print(j+"\t");
 				
 				if(((j+result)%7==0)||(j==column))
 				{
 					System.out.println();
 				}
 			}
-		}	
 			
-		
+	
 		}
-		
 		catch(Exception e)
 		{
 			System.out.println(" ");

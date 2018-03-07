@@ -91,7 +91,6 @@ public class QueueLogic
 		    while (ptr != rear.getLink() )
 		    { 
 		    	ptr1=ptr1 + ptr.getData();
-		       // System.out.println(ptr1);
 		        ptr = ptr.getLink();
 		    }
 		    System.out.println(ptr1);
