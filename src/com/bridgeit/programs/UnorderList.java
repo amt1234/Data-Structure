@@ -1,0 +1,52 @@
+/******************************************************************************
+ *  Purpose: Read the Text from a file, split it into words and arrange it as Linked List. 
+ *  		Take a user input to search a Word in the List.
+ *   		If the Word is not found then add it to the list, and if it found then remove the word from the List. 
+ *  @author  Poonam
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+package com.bridgeit.programs;
+ 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+import com.bridgeit.utility.Utility;
+public class UnorderList {
+
+	public static void main(String[] args) throws IOException
+	{
+		Utility utility=new Utility();
+		File file=new File("UnorderList.txt");
+		Scanner scanner=new Scanner(file);
+		
+		LinkedList3 mylist=new LinkedList3();
+		while(scanner.hasNext())
+		{
+			String string=scanner.next();
+			mylist.add(string);
+		}
+		scanner.close();
+		mylist.show();
+		System.out.println("enter target key");
+		String target=utility.inputString();
+		mylist.search(target);
+		if(mylist.search(target))
+		{
+			System.out.println("element is found and delete it");
+			mylist.remove(target);
+		}
+		else
+		{
+			System.out.println("element is not found and add it");
+			mylist.add(target);
+		}
+		mylist.show();
+	}
+
+
+}
