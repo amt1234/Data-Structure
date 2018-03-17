@@ -17,45 +17,32 @@ import com.bridgeit.utility.Utility;
 
 public class OrderedList {
 
-	public static void main(String[] args) throws IOException 
-	{
-		Utility utility=new Utility();
-		File file=new File("OrderedList.txt");
-		Scanner scanner=new Scanner(file);
-		
-		LinkedList3 mylist=new LinkedList3();
+	public static void main(String[] args) throws IOException {
+		Utility utility = new Utility();
+		File file = new File("OrderedList.txt");
+		Scanner scanner = new Scanner(file);
+
+		LinkedList3 mylist = new LinkedList3();
 		Integer string = null;
-		while(scanner.hasNext())
-		{
-			string=scanner.nextInt();
+		while (scanner.hasNext()) {
+			string = scanner.nextInt();
 			mylist.add(string);
 		}
 		scanner.close();
-		
+
 		mylist.show();
+		
 		System.out.println("enter target key");
-		Integer target=utility.inputInteger();
+		Integer target = utility.inputInteger();
 		mylist.search(target);
-		if(mylist.search(target))
-		{
+		if (mylist.search(target)) {
 			System.out.println("element is found and delete it");
 			mylist.remove(target);
-		}
-		else
-		{
+		} else {
 			System.out.println("element is not found and add it");
 			mylist.add(target);
 		}
 		mylist.show();
 	}
-		
+
 }
-	
-
-
-
-
-
-
-
-

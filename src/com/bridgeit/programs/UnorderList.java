@@ -8,45 +8,39 @@
  *
  ******************************************************************************/
 package com.bridgeit.programs;
- 
-import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.util.*;
 
 import com.bridgeit.utility.Utility;
+
 public class UnorderList {
 
-	public static void main(String[] args) throws IOException
-	{
-		Utility utility=new Utility();
-		File file=new File("UnorderList.txt");
-		Scanner scanner=new Scanner(file);
-		
-		LinkedList3 mylist=new LinkedList3();
-		while(scanner.hasNext())
-		{
-			String string=scanner.next();
+	public static void main(String[] args) throws IOException {
+		Utility utility = new Utility();
+		File file = new File("UnorderList.txt");
+		Scanner scanner = new Scanner(file);
+
+		LinkedList3 mylist = new LinkedList3();
+		while (scanner.hasNext()) {
+			String string = scanner.next();
 			mylist.add(string);
 		}
 		scanner.close();
 		mylist.show();
 		System.out.println("enter target key");
-		String target=utility.inputString();
+		String target = utility.inputString();
 		mylist.search(target);
-		if(mylist.search(target))
-		{
+		if (mylist.search(target)) {
 			System.out.println("element is found and delete it");
 			mylist.remove(target);
-		}
-		else
-		{
+		} else {
 			System.out.println("element is not found and add it");
 			mylist.add(target);
 		}
 		mylist.show();
 	}
-
 
 }

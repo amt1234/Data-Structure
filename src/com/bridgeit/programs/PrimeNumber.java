@@ -12,19 +12,11 @@ import java.util.ArrayList;
 
 import com.bridgeit.utility.Utility;
 
-public class PrimeNumber
-{
-	public static void main(String[] args) 
-	{
+public class PrimeNumber {
+	public static void main(String[] args) {
 		Utility utility = new Utility();
-				
-		ArrayList<Integer> array =utility.primeNumbers(0, 1000);
+
+		ArrayList<Integer> array = utility.primeNumbers(0, 1000);
 		utility.print2DArray(array);
 	}
 }
-
-		
-				
-	
-
-

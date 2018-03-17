@@ -1,4 +1,13 @@
+/******************************************************************************
+ *  Purpose:   Implementing linkedlist
+ *  @author  Poonam
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
 package com.bridgeit.programs;
+
 
 class Node2<T>
 {
@@ -92,7 +101,17 @@ public class LinkedList3
 		return false;
 	}
 	
-	
+	public void sort(String[][] array) {
+		Node2 temp=first;
+		
+		int i,j;
+		
+		for(i=0;i<array.length;i++) {
+			for(j=i+1;j<array.length;j++) {
+				
+			}
+		}
+	}
 	/*public <T> void sort(T mylist)
 	{
 		T key;
@@ -109,7 +128,8 @@ public class LinkedList3
 		{
 			System.out.println(array[i]);
 		}
-	}*/
+	}
+	*/
 	
 	
 	
